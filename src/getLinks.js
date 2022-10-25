@@ -1,8 +1,7 @@
 const fs = require('fs');
 
-let linksData = []
 const getLinks = (arrayMDFiles) => { // recibe array de archivo
-
+  let linksData = [];
   arrayMDFiles.forEach((mdFile) => {
     const data = fs.readFileSync(mdFile, 'utf8');
     // console.log(data);  //leer el archivo
@@ -17,10 +16,12 @@ const getLinks = (arrayMDFiles) => { // recibe array de archivo
                         file: arrayMDFiles
                     })
                 })
-                console.log('info links',linksData)
-            } 
-            
+                // console.log('GETLINKS',linksData);
+            }      
   })
+  return linksData;
 }
 
+
 module.exports = getLinks;
+

@@ -10,7 +10,7 @@ const resolvePaths = (route) => {
     } else {
       pathAbsolute = route;
     }
-    console.log('resolvePath-ruta absoluta:',`${pathAbsolute}`)
+    // console.log('resolvePath-ruta absoluta:',`${pathAbsolute}`)
 
   const fileExist = fs.existsSync(pathAbsolute) 
   if (!fileExist) {

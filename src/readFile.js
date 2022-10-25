@@ -9,7 +9,7 @@ const pathFile = (absolutePath, arrayMDFiles) => {
     exit();
   } else if (ext === '.md') { 
     arrayMDFiles.push(absolutePath);
-    console.log('readFile-array MD files', arrayMDFiles);
+    // console.log('readFile-array MD files', arrayMDFiles);
   }
 }
 

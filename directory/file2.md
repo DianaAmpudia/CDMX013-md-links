@@ -2,4 +2,4 @@ Mauris sed sapien ac felis dapibus cursus. Cras et erat tempus nisl blandit posu
 
 Proin sem eros, eleifend eget ipsum id, sodales vehicula urna. Donec a dui risus. Nullam fermentum mi ut tortor eleifend tristique. Donec at tincidunt urna. Maecenas laoreet tellus iaculis orci sodales faucibus. Sed tortor dolor, bibendum in lectus at, laoreet aliquam ipsum. Quisque euismod urna nec tristique tincidunt. Aliquam egestas scelerisque elit quis cursus. Ut ac est efficitur quam suscipit finibus et vitae ipsum. Cras lobortis malesuada odio, a tempus metus tincidunt nec. Aliquam nec justo ac purus pretium scelerisque. Phasellus sit amet quam commodo, lacinia massa a, vulputate dui.
 
-![prueba](https://user-images.githubusercontent.com/110297/42118443-b7a5f1f0-7bc8-11e8-96ad-9cc5593715a6.jpg)
+![prueba](https://github.com/DianaAmpudia/CDMX013-card-validation/src)
