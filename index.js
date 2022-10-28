@@ -5,7 +5,7 @@ const readDirectory = require('./src/readDirectory.js')
 const readFile = require('./src/readFile.js') 
 const getLinks = require('./src/getLinks.js')
 const validateLinks = require('./src/validateLinks.js');
-const { exit } = require('process');
+const getStats = require('./src/getStats.js')
 // const { exit } = require('process');
 
 //creamos la interfaz que voy a utilizar para recibir y mostrar información al usuario
@@ -39,8 +39,8 @@ readline.question(chalk.black.bgYellowBright.bold(`✨ Ingresa una ruta ✨:`), 
   if (arrayMDFiles.length === 0) {
       return console.log((chalk.black.bgYellowBright.bold('❌ No se encontraron archivos md ❌')))
     } else {
-      const pruebaDos = getLinks(arrayMDFiles);
-      validateLinks(pruebaDos);
+      const arrayLinks = getLinks(arrayMDFiles);
+      validateLinks(arrayLinks);
+      getStats(arrayLinks)
     }
 })
-

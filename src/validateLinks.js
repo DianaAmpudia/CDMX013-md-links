@@ -1,8 +1,8 @@
 const axios = require('axios');
 const chalk = require('chalk');
 
-const validateLinks = (linksData) => {
-    let linksValidationRequest = Promise.all(linksData.map((object) => {
+const validateLinks = (arrayLinks) => {
+    let linksValidationRequest = Promise.all(arrayLinks.map((object) => {
       return axios.get(object.href).then(res => {
         const statusObj = {
           ...object,
