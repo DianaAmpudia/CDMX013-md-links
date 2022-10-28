@@ -22,6 +22,5 @@ const getLinks = (arrayMDFiles) => { // recibe array de archivo
   return linksData;
 }
 
-
 module.exports = getLinks;
 
