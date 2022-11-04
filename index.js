@@ -1,46 +1,25 @@
-const fs = require('fs');
 const chalk = require('chalk');
-const resolvePaths = require('./src/resolvePath.js')
-const readDirectory = require('./src/readDirectory.js')
-const readFile = require('./src/readFile.js') 
-const getLinks = require('./src/getLinks.js')
-const validateLinks = require('./src/validateLinks.js');
-const getStats = require('./src/getStats.js')
-// const { exit } = require('process');
+const mdLinks = require('./mdLinks.js')
 
-//creamos la interfaz que voy a utilizar para recibir y mostrar información al usuario
+// creamos la interfaz que voy a utilizar para recibir y mostrar información al usuario
 const readline = require('readline').createInterface({
   input: process.stdin,
   output: process.stdout
 })
 
 const welcome = () => {
-    console.log(chalk.whiteBright.bgMagenta.bold('=============================================='))
-    console.log(chalk.whiteBright.bgMagenta.bold('         🔆 BIENVENID@ A MD LINKS 🔆          '))
-    console.log(chalk.whiteBright.bgMagenta.bold('=============================================='))
+    console.log(chalk.whiteBright.bgMagenta.bold('========================================================================='))
+    console.log(chalk.whiteBright.bgMagenta.bold('                     🔆 BIENVENID@ A MD LINKS 🔆                         '))
+    console.log(chalk.whiteBright.bgMagenta.bold('========================================================================='))
+    console.log(chalk.whiteBright.bgMagenta.bold('A continuación deberas colocar una ruta y una de las siguientes opciones '))
+    console.log(chalk.whiteBright.bgMagenta.bold('--validate: Valida los links del archivo md                              '))
+    console.log(chalk.whiteBright.bgMagenta.bold('--stats: Te regresa el total de links y el número de links únicos        '))
+    console.log(chalk.whiteBright.bgMagenta.bold('                                                                         '))
 }
 
 welcome();
-readline.question(chalk.black.bgYellowBright.bold(`✨ Ingresa una ruta ✨:`), (route) => {
-
-  let arrayMDFiles = [];
-  resolvePaths(route);
-  const fileOrDirectory = fs.lstatSync(route).isDirectory();
-  // console.log((chalk.black.bgYellowBright.bold('¿Es una carpeta? 📁'), fileOrDirectory));
-
-  if (fileOrDirectory === false) {
-    console.log((chalk.black.bgYellowBright.bold('Es un archivo 📄')));
-   readFile(route, arrayMDFiles);
-  } else {
-    console.log((chalk.black.bgYellowBright.bold('Es una carpeta 📁')));
-    readDirectory(route, arrayMDFiles);
-  }
-
-  if (arrayMDFiles.length === 0) {
-      return console.log((chalk.black.bgYellowBright.bold('❌ No se encontraron archivos md ❌')))
-    } else {
-      const arrayLinks = getLinks(arrayMDFiles);
-      validateLinks(arrayLinks);
-      getStats(arrayLinks)
-    }
+readline.question(chalk.black.bgYellowBright.bold(`✨ Ingresa una ruta✨:`), (path) => {
+  readline.question(chalk.black.bgYellowBright.bold(`✨ Ingresa una opción✨:`), (option) => {
+    mdLinks(path, option);
+  })
 })
