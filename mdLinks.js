@@ -38,7 +38,6 @@ const mdLinks = (route, option) => {
         else if(option === '--stats'){
             const arrayLinks = getLinks(arrayMDFiles);
             resolve (linkStats(arrayLinks))
-            exit()
         }
         else if(option === '--validate --stats'){
             const arrayLinks = getLinks(arrayMDFiles);

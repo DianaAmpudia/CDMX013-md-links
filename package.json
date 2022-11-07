@@ -9,6 +9,8 @@
   "directories": {
     "test": "test"
   },
+  "bin": {"mdLinks": "index.js"
+},
   "scripts": {
     "start": "node index.js"
   },
